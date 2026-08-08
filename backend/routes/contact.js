@@ -1,12 +1,8 @@
 import { Router } from 'express'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 
 const router = Router()
-
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: { user: process.env.MAIL_USER, pass: process.env.MAIL_PASS },
-})
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 router.post('/', async (req, res) => {
     const { name, email, subject, message } = req.body
@@ -15,9 +11,9 @@ router.post('/', async (req, res) => {
     }
 
     try {
-        await transporter.sendMail({
-            from: `"ARASUMATE Contact" <${process.env.MAIL_USER}>`,
-            to: process.env.MAIL_TO || process.env.MAIL_USER,
+        await resend.emails.send({
+            from: 'ARASUMATE Contact <onboarding@resend.dev>',
+            to: process.env.MAIL_TO,
             replyTo: email,
             subject: `[ARASUMATE Contact] ${subject || 'New message'}`,
             html: `
