@@ -23,8 +23,10 @@ export default function AdminUsers() {
   }, [])
 
   const filtered = users.filter((u) =>
-    (u.name || u.deviceId || '').toLowerCase().includes(query.toLowerCase())
+    (u.studentId || u.fcmToken || '').toLowerCase().includes(query.toLowerCase())
   )
+
+  const isActive = (u) => Date.now() - new Date(u.lastActiveAt).getTime() < 24 * 60 * 60 * 1000
 
   return (
     <AdminLayout>
@@ -49,31 +51,33 @@ export default function AdminUsers() {
           <p className="text-sm text-ink/40 py-10 text-center">Loading users…</p>
         ) : filtered.length === 0 ? (
           <p className="text-sm text-ink/40 py-10 text-center">
-            No users found — connect your backend's <code className="text-primary">/api/admin/users</code> endpoint to populate this list from MongoDB.
+            No users found yet — this list fills automatically once the app registers a device.
           </p>
         ) : (
           <table className="w-full text-sm min-w-[600px]">
             <thead>
               <tr className="text-left text-ink/40 text-xs border-b border-ink/5">
-                <th className="pb-3 font-medium">Name / Device</th>
+                <th className="pb-3 font-medium">Student ID</th>
                 <th className="pb-3 font-medium">Department</th>
+                <th className="pb-3 font-medium">Year / Sem</th>
                 <th className="pb-3 font-medium">FCM Token</th>
-                <th className="pb-3 font-medium">Installed</th>
+                <th className="pb-3 font-medium">Last Active</th>
                 <th className="pb-3 font-medium">Status</th>
               </tr>
             </thead>
             <tbody>
               {filtered.map((u) => (
-                <tr key={u.id} className="border-b border-ink/5 last:border-0">
+                <tr key={u._id} className="border-b border-ink/5 last:border-0">
                   <td className="py-3.5 flex items-center gap-2 font-medium">
-                    <Smartphone size={14} className="text-primary" /> {u.name || u.deviceId}
+                    <Smartphone size={14} className="text-primary" /> {u.studentId || '—'}
                   </td>
                   <td className="py-3.5 text-ink/50">{u.department || '—'}</td>
+                  <td className="py-3.5 text-ink/50">{[u.year, u.semester].filter(Boolean).join(' / ') || '—'}</td>
                   <td className="py-3.5 text-ink/40 font-mono text-xs">{(u.fcmToken || '').slice(0, 18)}…</td>
-                  <td className="py-3.5 text-ink/50">{new Date(u.installedAt).toLocaleDateString()}</td>
+                  <td className="py-3.5 text-ink/50">{new Date(u.lastActiveAt).toLocaleDateString()}</td>
                   <td className="py-3.5">
-                    <span className={`text-xs px-2.5 py-1 rounded-full ${u.active ? 'bg-emerald-100 text-emerald-600' : 'bg-ink/5 text-ink/40'}`}>
-                      {u.active ? 'Active' : 'Inactive'}
+                    <span className={`text-xs px-2.5 py-1 rounded-full ${isActive(u) ? 'bg-emerald-100 text-emerald-600' : 'bg-ink/5 text-ink/40'}`}>
+                      {isActive(u) ? 'Active' : 'Inactive'}
                     </span>
                   </td>
                 </tr>

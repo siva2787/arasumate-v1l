@@ -2,8 +2,13 @@ import { motion } from 'framer-motion'
 import { Download, ShieldCheck, WifiOff, UserX } from 'lucide-react'
 import FloatingShapes from './FloatingShapes'
 import logo from '../assets/logo.png'
+import api from '../lib/api'
 
 const APK_URL = '/arasumate-v1.apk'
+
+const track = (source) => {
+  api.post('/downloads/track', { source }).catch(() => { })
+}
 
 export default function DownloadCTA() {
   return (
@@ -30,6 +35,7 @@ export default function DownloadCTA() {
             whileHover={{ scale: 1.05 }}
             href={APK_URL}
             download
+            onClick={() => track('button')}
             className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-semibold shadow-2xl"
           >
             <Download size={18} /> Download APK
@@ -60,6 +66,7 @@ export default function DownloadCTA() {
               src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(window.location.origin + APK_URL)}`}
               alt="Scan to download ARASUMATE APK"
               className="w-full h-full"
+              onLoad={() => track('qr')}
             />
           </div>
           <p className="text-center text-xs text-ink/50 mt-2">Scan to Download</p>

@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, ShieldCheck, Lock, ArrowLeft } from 'lucide-react'
+import { Eye, EyeOff, ShieldCheck, ChevronLeft } from 'lucide-react'
 import api from '../../lib/api'
+import adminIllustration from '../../assets/admin-illustration.png'
 
 export default function AdminLogin() {
   const [username, setUsername] = useState('')
@@ -34,9 +35,16 @@ export default function AdminLogin() {
       <div className="absolute top-24 left-16 w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-float-slow" />
       <div className="absolute bottom-16 right-20 w-40 h-40 rounded-full bg-accent/20 blur-3xl animate-float" />
 
-      <a href="/" className="absolute top-8 left-8 inline-flex items-center gap-2 text-sm font-medium text-ink/50 hover:text-primary transition-colors">
-        <ArrowLeft size={16} /> Back to site
-      </a>
+      <motion.a
+        href="/"
+        whileHover={{ x: -3 }}
+        className="absolute top-8 left-8 inline-flex items-center gap-1.5 glass pl-2.5 pr-4 py-2 rounded-full text-sm font-medium text-ink/70 hover:text-primary shadow-glass transition-colors z-20"
+      >
+        <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
+          <ChevronLeft size={14} />
+        </span>
+        Back to site
+      </motion.a>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -44,24 +52,16 @@ export default function AdminLogin() {
         transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         className="glass rounded-3xl shadow-soft overflow-hidden grid md:grid-cols-2 max-w-3xl w-full relative z-10"
       >
-        <div className="hidden md:flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10 p-10 relative">
-          <span className="absolute top-6 left-6 inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-semibold text-primary shadow-glass">
+        <div className="hidden md:flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10 p-8 relative">
+          <span className="absolute top-6 left-6 inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-semibold text-primary shadow-glass z-10">
             <ShieldCheck size={13} /> ADMIN PANEL ACCESS
           </span>
 
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ repeat: Infinity, duration: 4 }}
-            className="relative w-48 h-48 mt-8"
-          >
-            <div className="absolute inset-0 rounded-[2.5rem] bg-grad-primary opacity-90 shadow-soft flex items-center justify-center">
-              <Lock size={64} className="text-white" />
-            </div>
-            <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-2xl bg-white shadow-glass flex items-center justify-center text-2xl">
-              🧑‍💻
-            </div>
-            <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-accent/60 animate-float" />
-          </motion.div>
+          <img
+            src={adminIllustration}
+            alt="Admin security"
+            className="w-full max-w-[240px] rounded-2xl shadow-glass mt-10"
+          />
         </div>
 
         <form onSubmit={submit} className="p-8 md:p-10 bg-white/70">

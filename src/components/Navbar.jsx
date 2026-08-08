@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ShieldCheck } from 'lucide-react'
 import logo from '../assets/logo.png'
 
 const links = [
@@ -34,9 +34,8 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass shadow-glass py-3' : 'py-6 bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass shadow-glass py-3' : 'py-6 bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
         <button onClick={() => scrollTo('home')} className="flex items-center gap-2 font-display font-bold text-xl">
@@ -52,12 +51,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <button
-          onClick={() => scrollTo('download')}
-          className="hidden lg:inline-flex items-center gap-2 bg-grad-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-soft hover:scale-105 transition-transform"
-        >
-          Download APK
-        </button>
+        <div className="hidden lg:flex items-center gap-3">
+          <a
+            href="/admin"
+            className="inline-flex items-center gap-2 bg-ink text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-soft hover:scale-105 transition-transform"
+          >
+            <ShieldCheck size={15} /> Admin Panel
+          </a>
+        </div>
 
         <button className="lg:hidden" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
@@ -76,9 +77,9 @@ export default function Navbar() {
                 {l.label}
               </button>
             ))}
-            <button onClick={() => scrollTo('download')} className="mt-2 bg-grad-primary text-white py-3 rounded-xl font-semibold">
-              Download APK
-            </button>
+            <a href="/admin" className="inline-flex items-center justify-center gap-2 bg-ink text-white py-3 rounded-xl font-semibold">
+              <ShieldCheck size={15} /> Admin Panel
+            </a>
           </div>
         </motion.div>
       )}

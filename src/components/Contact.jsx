@@ -1,14 +1,24 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import api from '../lib/api'
 
 export default function Contact() {
-  const [sent, setSent] = useState(false)
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+  const [status, setStatus] = useState('idle')
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 3000)
+    setStatus('sending')
+    try {
+      await api.post('/contact', form)
+      setStatus('sent')
+      setForm({ name: '', email: '', subject: '', message: '' })
+      setTimeout(() => setStatus('idle'), 3000)
+    } catch {
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 3000)
+    }
   }
 
   const details = [
@@ -58,18 +68,49 @@ export default function Contact() {
           className="bg-primary/5 border border-primary/10 rounded-3xl p-8 shadow-glass relative"
         >
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
-            <input required placeholder="Your Name" className={inputClass} />
-            <input required type="email" placeholder="Email Address" className={inputClass} />
+            <input
+              required
+              placeholder="Your Name"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              className={inputClass}
+            />
+            <input
+              required
+              type="email"
+              placeholder="Email Address"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className={inputClass}
+            />
           </div>
-          <input required placeholder="How can we help you?" className={`w-full mb-4 ${inputClass}`} />
-          <textarea required rows={4} placeholder="Type your message here..." className={`w-full mb-5 resize-none ${inputClass}`} />
+          <input
+            required
+            placeholder="How can we help you?"
+            value={form.subject}
+            onChange={(e) => setForm({ ...form, subject: e.target.value })}
+            className={`w-full mb-4 ${inputClass}`}
+          />
+          <textarea
+            required
+            rows={4}
+            placeholder="Type your message here..."
+            value={form.message}
+            onChange={(e) => setForm({ ...form, message: e.target.value })}
+            className={`w-full mb-5 resize-none ${inputClass}`}
+          />
+          {status === 'error' && (
+            <p className="text-xs font-medium text-red-500 mb-4">Failed to send. Please try again.</p>
+          )}
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             type="submit"
-            className="inline-flex items-center gap-2 bg-grad-primary text-white px-7 py-3.5 rounded-full font-semibold shadow-soft"
+            disabled={status === 'sending'}
+            className="inline-flex items-center gap-2 bg-grad-primary text-white px-7 py-3.5 rounded-full font-semibold shadow-soft disabled:opacity-60"
           >
-            <Send size={16} /> {sent ? 'Message Sent!' : 'Send Message'}
+            <Send size={16} />
+            {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Message Sent!' : 'Send Message'}
           </motion.button>
         </motion.form>
       </div>
