@@ -10,6 +10,7 @@ import contactRoutes from './routes/contact.js'
 import downloadRoutes from './routes/downloads.js'
 
 const app = express()
+app.set('trust proxy', 1)
 app.use(cors())
 app.use(express.json())
 
