@@ -12,10 +12,10 @@ router.post('/', async (req, res) => {
 
     try {
         await resend.emails.send({
-            from: 'ARASUMATE Contact <onboarding@resend.dev>',
+            from: 'KAMPLY Contact <onboarding@resend.dev>',
             to: process.env.MAIL_TO,
             replyTo: email,
-            subject: `[ARASUMATE Contact] ${subject || 'New message'}`,
+            subject: `[KAMPLY Contact] ${subject || 'New message'}`,
             html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>

@@ -10,9 +10,9 @@ export default function FloatingShapes({ variant = 'default' }) {
   }
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-16 right-[8%] w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent opacity-70 animate-float shadow-soft" />
+      <div className="absolute hidden sm:block top-16 right-[8%] w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent opacity-70 animate-float shadow-soft" />
       <div className="absolute top-1/3 left-[4%] w-8 h-8 rounded-full bg-secondary/40 animate-float-delay" />
-      <div className="absolute bottom-24 right-[20%] w-20 h-20 rounded-full border-8 border-accent/40 animate-float-slow" />
+      <div className="absolute hidden sm:block bottom-24 right-[20%] w-20 h-20 rounded-full border-8 border-accent/40 animate-float-slow" />
       <div className="absolute bottom-10 left-[12%] w-6 h-6 rounded-md bg-primary/60 animate-float" />
     </div>
   )

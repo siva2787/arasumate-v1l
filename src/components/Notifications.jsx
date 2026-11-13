@@ -43,7 +43,7 @@ export default function Notifications() {
           <motion.div
             animate={{ rotate: [0, -10, 10, 0] }}
             transition={{ repeat: Infinity, duration: 3 }}
-            className="absolute -top-4 -left-6 w-16 h-16 rounded-full bg-grad-primary flex items-center justify-center text-white shadow-soft"
+            className="absolute -top-4 -left-1 sm:-left-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-grad-primary flex items-center justify-center text-white shadow-soft"
           >
             <Bell size={24} />
           </motion.div>
@@ -51,7 +51,7 @@ export default function Notifications() {
 
         <div className="order-1 lg:order-2">
           <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">Real-time Notifications</p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl mb-6 leading-tight">
+          <h2 className="font-display font-bold text-[1.9rem] leading-tight sm:text-4xl md:text-5xl mb-6 leading-tight">
             Never miss <br /> what <span className="text-gradient">matters.</span>
           </h2>
           <p className="text-ink/60 text-lg mb-8 max-w-md leading-relaxed">

@@ -56,7 +56,7 @@ export default function AdminDashboard() {
     <AdminLayout>
       <div className="mb-8">
         <h1 className="font-display font-bold text-2xl">Dashboard</h1>
-        <p className="text-sm text-ink/50">Overview of ARASUMATE app installs and activity.</p>
+        <p className="text-sm text-ink/50">Overview of KAMPLY app installs and activity.</p>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">

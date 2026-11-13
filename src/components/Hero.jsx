@@ -54,10 +54,10 @@ export default function Hero() {
       id="home"
       ref={ref}
       onMouseMove={handleMouse}
-      className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-grad-radial"
+      className="relative min-h-screen flex items-center pt-24 sm:pt-28 pb-14 sm:pb-16 overflow-hidden bg-grad-radial"
     >
       <FloatingShapes />
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center w-full relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full relative z-10">
         <div>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -72,16 +72,16 @@ export default function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
-            className="font-display font-extrabold text-6xl md:text-7xl xl:text-8xl leading-[0.95] text-gradient mb-6"
+            className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl xl:text-8xl leading-[1.05] text-gradient mb-5 sm:mb-6 break-words"
           >
-            ARASUMATE
+            KAMPLY
           </motion.h1>
 
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.35, duration: 0.6 }}
-            className="font-display font-semibold text-2xl md:text-3xl text-ink mb-6"
+            className="font-display font-semibold text-xl sm:text-2xl md:text-3xl text-ink mb-4 sm:mb-6"
           >
             Smart Academics,<br /> Smarter You.
           </motion.h2>
@@ -90,7 +90,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.6 }}
-            className="text-ink/60 text-lg max-w-md mb-8 leading-relaxed"
+            className="text-ink/60 text-base sm:text-lg max-w-md mb-7 sm:mb-8 leading-relaxed"
           >
             Track attendance, manage tasks, calculate CGPA, receive real-time notifications and organize your entire academic life in one beautiful Android application.
           </motion.p>
@@ -99,12 +99,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6, staggerChildren: 0.1 }}
-            className="flex flex-wrap gap-4 mb-8"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-7 sm:mb-8"
           >
-            <a href="#download" className="inline-flex items-center gap-2 bg-grad-primary text-white px-7 py-4 rounded-full font-semibold shadow-soft hover:scale-105 transition-transform">
+            <a href="#download" className="inline-flex items-center justify-center gap-2 bg-grad-primary text-white px-7 py-3.5 sm:py-4 rounded-full font-semibold shadow-soft hover:scale-105 transition-transform">
               <Download size={18} /> Download APK
             </a>
-            <a href="#features" className="inline-flex items-center gap-2 glass px-7 py-4 rounded-full font-semibold hover:scale-105 transition-transform">
+            <a href="#features" className="inline-flex items-center justify-center gap-2 glass px-7 py-3.5 sm:py-4 rounded-full font-semibold hover:scale-105 transition-transform">
               Explore Features <ArrowRight size={18} />
             </a>
           </motion.div>
@@ -113,7 +113,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="flex flex-wrap gap-3"
+            className="flex flex-wrap gap-2 sm:gap-3"
           >
             {badges.map(({ icon: Icon, label }) => (
               <span key={label} className="inline-flex items-center gap-1.5 text-xs font-medium text-ink/60 bg-white/70 border border-primary/10 px-3 py-1.5 rounded-full">
@@ -123,12 +123,12 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative flex justify-center items-center">
+        <div className="relative flex justify-center items-center mt-4 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-            className="absolute w-80 h-80 rounded-full bg-grad-primary opacity-20 blur-3xl"
+            className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-grad-primary opacity-20 blur-3xl"
           />
           <motion.div
             className="absolute bottom-0 w-72 h-16 rounded-full bg-primary/20 blur-2xl"
@@ -139,7 +139,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-            className="relative w-64 md:w-72 aspect-[9/19] rounded-[2.75rem] bg-ink border-[6px] border-ink shadow-2xl overflow-hidden z-10"
+            className="relative w-60 sm:w-64 md:w-72 aspect-[9/19] rounded-[2.75rem] bg-ink border-[6px] border-ink shadow-2xl overflow-hidden z-10"
           >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-ink rounded-b-2xl z-20" />
             <div className="w-full h-full bg-white overflow-hidden flex flex-col">
@@ -156,7 +156,7 @@ export default function Hero() {
                 <div className="bg-grad-primary rounded-2xl p-3.5 flex items-center justify-between">
                   <div>
                     <p className="text-white/80 text-[9px] italic">Good Night,</p>
-                    <p className="text-white text-sm font-semibold">Easwar S 👋</p>
+                    <p className="text-white text-sm font-semibold">Siva 👋</p>
                     <p className="text-white/70 text-[8px] italic mt-0.5">Sem 5 · AI &amp; DS</p>
                   </div>
                   <span className="w-9 h-9 rounded-full bg-white/25 flex items-center justify-center shrink-0">
@@ -223,7 +223,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.div className="absolute top-10 left-0 w-6 h-6 rounded-full bg-primary animate-float-slow" />
-          <motion.div className="absolute top-24 right-0 w-14 h-14 rounded-full border-4 border-secondary/50 animate-float" />
+          <motion.div className="absolute top-24 right-0 w-10 h-10 sm:w-14 sm:h-14 rounded-full border-4 border-secondary/50 animate-float" />
           <motion.div className="absolute bottom-16 left-4 w-10 h-10 rounded-xl bg-accent/60 animate-float-delay" />
           <motion.div className="absolute bottom-6 right-8 w-8 h-8 rounded-full bg-grad-primary animate-float" />
         </div>
@@ -232,7 +232,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-ink/40 text-xs"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1 text-ink/40 text-xs"
       >
         Scroll Down <ChevronDown size={16} />
       </motion.div>

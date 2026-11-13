@@ -52,7 +52,7 @@ export default function Contact() {
                   <Icon size={18} />
                 </span>
                 <div>
-                  <p className="text-xs text-ink/40">{label}</p>
+                  <p className="text-xs font-medium text-ink/70">{label}</p>
                   <p className="text-sm font-medium">{value}</p>
                 </div>
               </div>

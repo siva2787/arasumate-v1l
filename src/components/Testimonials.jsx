@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
 
 const testimonials = [
-  { name: 'Karthik S', role: '3rd Year, AI & DS', quote: 'ARASUMATE has made my academic life so organized and stress-free!' },
+  { name: 'Karthik S', role: '3rd Year, AI & DS', quote: 'KAMPLY has made my academic life so organized and stress-free!' },
   { name: 'Meena R', role: '3rd Year, AI & DS', quote: 'Love the notifications and CGPA tracker. Super helpful!' },
   { name: 'Arun K', role: '3rd Year, AI & DS', quote: 'Best app for our department. Everything in one place!' },
 ]
@@ -18,7 +18,7 @@ export default function Testimonials() {
           className="mb-14 text-center"
         >
           <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">What Students Say</p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl">Loved by <span className="text-gradient">students.</span></h2>
+          <h2 className="font-display font-bold text-[1.9rem] leading-tight sm:text-4xl md:text-5xl">Loved by <span className="text-gradient">students.</span></h2>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">

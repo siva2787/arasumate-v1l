@@ -31,14 +31,14 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-grad-radial bg-white flex items-center justify-center px-6 py-12 relative overflow-hidden">
+    <div className="min-h-screen bg-grad-radial bg-white flex flex-col items-center justify-center px-4 sm:px-6 pt-20 sm:pt-12 pb-10 sm:pb-12 relative overflow-hidden">
       <div className="absolute top-24 left-16 w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-float-slow" />
       <div className="absolute bottom-16 right-20 w-40 h-40 rounded-full bg-accent/20 blur-3xl animate-float" />
 
       <motion.a
         href="/"
         whileHover={{ x: -3 }}
-        className="absolute top-8 left-8 inline-flex items-center gap-1.5 glass pl-2.5 pr-4 py-2 rounded-full text-sm font-medium text-ink/70 hover:text-primary shadow-glass transition-colors z-20"
+        className="absolute top-5 left-4 sm:top-8 sm:left-8 inline-flex items-center gap-1.5 glass pl-2.5 pr-4 py-2 rounded-full text-sm font-medium text-ink/70 hover:text-primary shadow-glass transition-colors z-20"
       >
         <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
           <ChevronLeft size={14} />
@@ -52,15 +52,15 @@ export default function AdminLogin() {
         transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         className="glass rounded-3xl shadow-soft overflow-hidden grid md:grid-cols-2 max-w-3xl w-full relative z-10"
       >
-        <div className="hidden md:flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10 p-8 relative">
-          <span className="absolute top-6 left-6 inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-semibold text-primary shadow-glass z-10">
+        <div className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10 p-6 sm:p-8 pb-5 sm:pb-8 relative">
+          <span className="relative sm:absolute self-start top-0 sm:top-6 left-0 sm:left-6 mb-4 sm:mb-0 inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full text-xs font-semibold text-primary shadow-glass z-10">
             <ShieldCheck size={13} /> ADMIN PANEL ACCESS
           </span>
 
           <img
             src={adminIllustration}
             alt="Admin security"
-            className="w-full max-w-[240px] rounded-2xl shadow-glass mt-10"
+            className="w-full max-w-[140px] sm:max-w-[240px] rounded-2xl shadow-glass mt-6 sm:mt-10"
           />
         </div>
 

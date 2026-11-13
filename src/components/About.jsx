@@ -29,18 +29,18 @@ export default function About() {
             animate={{ y: [0, -14, 0] }}
             transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
             src={aboutIllustration}
-            alt="Students using ARASUMATE"
+            alt="Students using KAMPLY"
             className="relative z-10 w-full max-w-md rounded-3xl shadow-2xl"
           />
         </motion.div>
 
         <div ref={ref}>
           <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">About Us</p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl mb-6 leading-tight">
+          <h2 className="font-display font-bold text-[1.9rem] leading-tight sm:text-4xl md:text-5xl mb-6 leading-tight">
             Built for students, <br /> by <span className="text-gradient">students.</span>
           </h2>
-          <p className="text-ink/60 text-lg mb-10 max-w-lg leading-relaxed">
-            ARASUMATE was created with a simple mission: to make academic life easier and smarter for every student. We understand the challenges students face, and we're here to solve them with technology.
+          <p className="text-ink/60 text-base sm:text-lg mb-8 sm:mb-10 max-w-lg leading-relaxed">
+            KAMPLY was created with a simple mission: to make academic life easier and smarter for every student. We understand the challenges students face, and we're here to solve them with technology.
           </p>
 
           <div className="grid grid-cols-2 gap-6">

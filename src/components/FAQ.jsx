@@ -4,11 +4,11 @@ import { Plus } from 'lucide-react'
 import faqIllustration from '../assets/faq-illustration.png'
 
 const faqs = [
-  { q: 'Is ARASUMATE free to use?', a: 'Yes, ARASUMATE is completely free for all students to download and use.' },
-  { q: 'Is my data safe with ARASUMATE?', a: 'Yes, your data is stored securely and never shared with third parties.' },
-  { q: 'Can I use ARASUMATE offline?', a: 'Yes, ARASUMATE runs fully offline on your device once installed.' },
+  { q: 'Is KAMPLY free to use?', a: 'Yes, KAMPLY is completely free for all students to download and use.' },
+  { q: 'Is my data safe with KAMPLY?', a: 'Yes, your data is stored securely and never shared with third parties.' },
+  { q: 'Can I use KAMPLY offline?', a: 'Yes, KAMPLY runs fully offline on your device once installed.' },
   { q: 'Do I need to register to use the app?', a: 'No lengthy sign-up is required, you can get started in just a few taps.' },
-  { q: 'What Android version is required?', a: 'ARASUMATE requires Android 9 and above for the best experience.' },
+  { q: 'What Android version is required?', a: 'KAMPLY requires Android 9 and above for the best experience.' },
 ]
 
 export default function FAQ() {

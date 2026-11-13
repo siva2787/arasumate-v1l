@@ -73,7 +73,7 @@ export default function AdminNotifications() {
     <AdminLayout>
       <div className="mb-8">
         <h1 className="font-display font-bold text-2xl">Send Notification</h1>
-        <p className="text-sm text-ink/50">Broadcast a push notification, with an optional image, to installed ARASUMATE apps.</p>
+        <p className="text-sm text-ink/50">Broadcast a push notification, with an optional image, to installed KAMPLY apps.</p>
       </div>
 
       <div className="grid lg:grid-cols-[1.2fr_1fr] gap-6">
@@ -170,12 +170,12 @@ export default function AdminNotifications() {
               <div>
                 <p className="text-sm font-semibold">{title || 'Notification title'}</p>
                 <p className="text-xs text-white/50 mt-1">{body || 'Your message will appear here.'}</p>
-                <p className="text-[10px] text-white/30 mt-2">ARASUMATE • now</p>
+                <p className="text-[10px] text-white/30 mt-2">KAMPLY • now</p>
               </div>
             </div>
           </div>
           <p className="text-xs text-white/40 mt-6 leading-relaxed">
-            Notifications are delivered to every device that installed the ARASUMATE APK from your website and registered its push token. An uploaded image shows as a banner in the notification.
+            Notifications are delivered to every device that installed the KAMPLY APK from your website and registered its push token. An uploaded image shows as a banner in the notification.
           </p>
         </div>
       </div>

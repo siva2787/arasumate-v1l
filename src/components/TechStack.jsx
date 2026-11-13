@@ -21,7 +21,7 @@ export default function TechStack() {
           className="mb-14 text-center"
         >
           <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">Technology Stack</p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl">
+          <h2 className="font-display font-bold text-[1.9rem] leading-tight sm:text-4xl md:text-5xl">
             Built with modern <span className="text-gradient">technologies.</span>
           </h2>
         </motion.div>

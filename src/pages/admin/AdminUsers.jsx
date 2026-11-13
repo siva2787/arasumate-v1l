@@ -33,7 +33,7 @@ export default function AdminUsers() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="font-display font-bold text-2xl">Users</h1>
-          <p className="text-sm text-ink/50">Everyone who installed ARASUMATE from your website.</p>
+          <p className="text-sm text-ink/50">Everyone who installed KAMPLY from your website.</p>
         </div>
         <div className="relative">
           <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-ink/30" />

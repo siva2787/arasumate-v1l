@@ -16,12 +16,12 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-ink text-white pt-20 pb-8 px-6 lg:px-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-[1.3fr_1fr_1fr] gap-12 mb-16">
+    <footer className="relative bg-ink text-white pt-16 sm:pt-20 pb-8 px-5 sm:px-6 lg:px-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-[1.3fr_1fr_1fr] gap-10 sm:gap-12 mb-12 sm:mb-16">
         <div>
           <div className="flex items-center gap-2 font-display font-bold text-xl mb-4">
-            <img src={logo} alt="ARASUMATE" className="w-9 h-9 rounded-xl" />
-            ARASUMATE
+            <img src={logo} alt="KAMPLY" className="w-9 h-9 rounded-xl" />
+            KAMPLY
           </div>
           <p className="text-white/50 text-sm max-w-xs leading-relaxed mb-5">
             Smart Academics, Smarter You. An all-in-one academic companion for students.
@@ -53,7 +53,17 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-        <p>© 2026 ARASUMATE. All rights reserved.</p>
+        <p className="text-white">
+          Built by Stormforge Technologies -{' '}
+          <a
+            href="https://easwar-dev.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#F5E6C8] font-semibold no-underline hover:underline hover:text-[#FFF3D6] transition-colors"
+          >
+            Easwar S
+          </a>
+        </p>
         <motion.button
           whileHover={{ y: -3 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

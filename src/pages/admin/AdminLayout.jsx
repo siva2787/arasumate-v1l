@@ -22,8 +22,8 @@ export default function AdminLayout({ children }) {
   const SidebarContent = (
     <>
       <div className="flex items-center gap-2 font-display font-bold text-lg mb-10 px-1">
-        <img src={logo} alt="ARASUMATE" className="w-9 h-9 rounded-xl" />
-        ARASUMATE
+        <img src={logo} alt="KAMPLY" className="w-9 h-9 rounded-xl" />
+        KAMPLY
         <span className="text-[10px] font-normal text-white/40 -ml-1">/admin</span>
       </div>
 
@@ -61,8 +61,8 @@ export default function AdminLayout({ children }) {
     <div className="min-h-screen bg-primary/5">
       <header className="lg:hidden sticky top-0 z-40 flex items-center justify-between bg-ink text-white px-5 py-4">
         <div className="flex items-center gap-2 font-display font-bold text-base">
-          <img src={logo} alt="ARASUMATE" className="w-8 h-8 rounded-lg" />
-          ARASUMATE
+          <img src={logo} alt="KAMPLY" className="w-8 h-8 rounded-lg" />
+          KAMPLY
         </div>
         <button onClick={() => setOpen(true)}>
           <Menu size={22} />

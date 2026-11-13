@@ -24,7 +24,7 @@ export default function AdminPanel() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <div>
           <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">Admin Panel</p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl mb-6 leading-tight">
+          <h2 className="font-display font-bold text-[1.9rem] leading-tight sm:text-4xl md:text-5xl mb-6 leading-tight">
             Simple tools <br /> for <span className="text-gradient">admins.</span>
           </h2>
           <p className="text-ink/60 text-lg mb-10 max-w-md leading-relaxed">

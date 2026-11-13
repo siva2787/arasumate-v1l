@@ -30,7 +30,7 @@ export default function Features() {
           className="mb-14"
         >
           <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">Features</p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl max-w-xl leading-tight">
+          <h2 className="font-display font-bold text-[1.9rem] leading-tight sm:text-4xl md:text-5xl max-w-xl leading-tight">
             Everything you need <br /> in one <span className="text-gradient">smart app.</span>
           </h2>
         </motion.div>
