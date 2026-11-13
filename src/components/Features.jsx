@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { FileText, ListChecks, TrendingUp, BellRing, FolderOpen } from 'lucide-react'
+import { FileText, Bot, TrendingUp, BellRing, FolderOpen } from 'lucide-react'
 
 const features = [
   { icon: FileText, title: 'Leave Management', desc: 'Apply for leave and track approval status easily.' },
-  { icon: ListChecks, title: 'Task Manager', desc: 'Create, track and never miss an assignment again.' },
+  { icon: Bot, title: 'Sara AI Assistant', desc: 'Ask Sara anything about your attendance, marks, exams or notes, and get instant, smart answers.' },
   { icon: TrendingUp, title: 'CGPA Calculator', desc: 'Calculate your CGPA instantly and track your progress.' },
   { icon: BellRing, title: 'Notifications', desc: 'Get instant updates on announcements, tasks and more.' },
   { icon: FolderOpen, title: 'Study Materials', desc: 'Access important materials anytime, anywhere, offline.' },
